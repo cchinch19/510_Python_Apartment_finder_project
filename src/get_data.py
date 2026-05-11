@@ -10,6 +10,8 @@ cities = ["downtown+long+beach", "cerritos", "redondo+beach", "corona", "malibu"
 session = requests.Session()
 session.headers.update(HEADERS)
 
+num_rooms = sys.argv[1] if len(sys.argv) > 1 else "2"
+
 def get_square_footage(listing_url, session):
     try:
         res = session.get(listing_url)
@@ -81,4 +83,4 @@ def scrape_for_rooms(num_rooms, session, cities, base_url):
                 break
     return scraped_results
 
-
+all_results = scrape_for_rooms(num_rooms, session, cities, base_url)
