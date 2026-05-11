@@ -8,6 +8,9 @@ with open("data/processed/scores.json") as f:
 with open("data/processed/commutes.json") as f:
     commutes = json.load(f)
   
+usc_commutes = commutes["usc"]
+work_commutes = commutes["work"]
+
 df = pd.DataFrame(all_results)
 
 df["usc_commute"] = df["city"].map(usc_commutes)
