@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import os
 os.makedirs("results", exist_ok=True)
 
-df = pd.read_csv("data/processed/apartments.csv")
+df = pd.read_csv("data/processed/apartments_data.csv")
 
 avg_price = df.groupby("city")["price"].mean().round(2)
 
