@@ -1,6 +1,8 @@
 import sys, time, random, json, re
 import requests
 from bs4 import BeautifulSoup
+import os
+os.makedirs("data/raw", exist_ok=True)
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 base_url = "https://losangeles.craigslist.org/search/apa?"
