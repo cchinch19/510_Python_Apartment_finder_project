@@ -38,3 +38,8 @@ score_data = {city: get_scores(coor[0], coor[1]) for city, coor in city_coor.ite
 usc_commutes = get_all_commutes(usc_lon, usc_lat)
 work_commutes = get_all_commutes(work_lon, work_lat)
 
+with open("data/processed/scores.json", "w") as f:
+    json.dump(score_data, f)
+with open("data/processed/commutes.json", "w") as f:
+    json.dump({"usc": usc_commutes, "work": work_commutes}, f)
+print("Saved scores and commutes")
