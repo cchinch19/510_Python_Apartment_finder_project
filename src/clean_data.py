@@ -29,4 +29,4 @@ commute = df.groupby("city")[["usc_commute", "work_commute"]].mean()
 walkscore_df = pd.DataFrame.from_dict(score_data, orient="index")
 walkscore_df.index.name = "city"
 
-df.to_csv("data/processed/apartment_data.csv", index=False)
+df.to_csv("data/processed/apartments.csv", index=False)
