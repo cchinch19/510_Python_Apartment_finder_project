@@ -1,7 +1,6 @@
-import sys, time, random
+import sys, time, random, json, re
 import requests
 from bs4 import BeautifulSoup
-import re
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 base_url = "https://losangeles.craigslist.org/search/apa?"
@@ -84,3 +83,6 @@ def scrape_for_rooms(num_rooms, session, cities, base_url):
     return scraped_results
 
 all_results = scrape_for_rooms(num_rooms, session, cities, base_url)
+
+with open("data/raw/listings.json", "w") as f:
+    json.dump(all_results, f)
