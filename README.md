@@ -3,7 +3,7 @@
 Apartment Finder<br>
 A tool that scrapes Craigslist apartment listings across 5 Los Angeles neighborhoods, adds  commute times and walk scores, and visualizes the results for analysis. 
 
-Installation<br>
+## Installation
 Clone the repository and install the required packages:<br>
 requirements.txt: This file lists all the external libraries you have used in your project.<br>
 You can create this file manually or use the following commands in your virtual env:<br>
@@ -12,20 +12,26 @@ To create this file you can run:<br>
   To install all the required libraries, you can run:<br>
   pip install -r requirements.txt<br>
 
-How to Get the Data<br>
+## How to Get the Data
 The scraper pulls apartment listings from Craigslist. Run it with the number of bedrooms you want as the argument:<br>
-python src/get_data.py 2<br>
+```bash
+python src/get_data.py 2
+```
 This will scrape listings for 2-bedroom apartments across Downtown Long Beach, Cerritos, Redondo Beach, Corona, and Malibu.<br>
 <br>
-How to Clean the Data<br>
+## How to Clean the Data
 Once the data is scraped, run the integration and cleaning scripts to enrich listings with commute times and walk scores:<br>
-python src/integrate_data.py<br>
-python src/clean_data.py<br>
+```bash
+python src/integrate_data.py
+python src/clean_data.py
+```
 This will produce a cleaned CSV file at data/processed/apartments.csv.<br>
 <br>
-How to Run the Analysis and Visualizations<br>
+## How to Run the Analysis and Visualizations
 Run the visualization script to produce the plots:<br>
-python src/analyze_visualize.py<br>
+```bash
+python src/analyze_visualize.py
+```
 This produces a 2x2 chart saved to results/overview.png with:<br>
 <br>
 Average rent by city<br>
