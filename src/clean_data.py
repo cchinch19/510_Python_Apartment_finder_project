@@ -1,7 +1,10 @@
 import pandas as pd
+import json
 from get_data import all_results
 from integrate_data import score_data, usc_commutes, work_commutes
 
+with open("data/raw/listings.json") as f:
+  all_results = json.load(f)
 df = pd.DataFrame(all_results)
 
 df["usc_commute"] = df["city"].map(usc_commutes)
