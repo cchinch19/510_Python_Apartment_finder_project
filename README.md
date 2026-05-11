@@ -1,4 +1,4 @@
-# 510_Python_Apartment_finder_project
+# 510 Python Apartment finder project
 
 Apartment Finder<br>
 A tool that scrapes Craigslist apartment listings across 5 Los Angeles neighborhoods, adds  commute times and walk scores, and visualizes the results for analysis. 
