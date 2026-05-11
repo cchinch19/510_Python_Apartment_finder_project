@@ -1,5 +1,7 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import os
+os.makedirs("results", exist_ok=True)
 
 df = pd.read_csv("data/processed/apartments.csv")
 
