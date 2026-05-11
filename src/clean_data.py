@@ -1,5 +1,5 @@
 import pandas as pd
-from scraper import all_results
+from get_data import all_results
 from integrate_data import score_data, usc_commutes, work_commutes
 
 df = pd.DataFrame(all_results)
