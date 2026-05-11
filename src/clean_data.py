@@ -1,10 +1,13 @@
 import pandas as pd
 import json
-from get_data import all_results
-from integrate_data import score_data, usc_commutes, work_commutes
 
 with open("data/raw/listings.json") as f:
-  all_results = json.load(f)
+    all_results = json.load(f)
+with open("data/processed/scores.json") as f:
+    score_data = json.load(f)
+with open("data/processed/commutes.json") as f:
+    commutes = json.load(f)
+  
 df = pd.DataFrame(all_results)
 
 df["usc_commute"] = df["city"].map(usc_commutes)
@@ -23,4 +26,4 @@ commute = df.groupby("city")[["usc_commute", "work_commute"]].mean()
 walkscore_df = pd.DataFrame.from_dict(score_data, orient="index")
 walkscore_df.index.name = "city"
 
-df.to_csv("data/processed/apartments.csv", index=False)
+df.to_csv("data/processed/apartment_data.csv", index=False)
