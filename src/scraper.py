@@ -2,7 +2,6 @@ import sys, time, random
 import requests
 from bs4 import BeautifulSoup
 import re
-import csv
 
 HEADERS = {"User-Agent": "Mozilla/5.0"}
 base_url = "https://losangeles.craigslist.org/search/apa?"
@@ -82,10 +81,4 @@ def scrape_for_rooms(num_rooms, session, cities, base_url):
                 break
     return scraped_results
 
-if __name__ == "__main__":
-    num_rooms = sys.argv[1]
-    results = scrape_for_rooms(num_rooms, session, cities, base_url)
-    import json
-    with open("data/raw/listings.json", "w") as f:
-        json.dump(results, f)
-    print(f"Saved {len(results)} listings")
+
