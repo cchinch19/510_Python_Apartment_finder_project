@@ -1,5 +1,17 @@
+import pandas as pd
 import matplotlib.pyplot as plt
-from clean_data import avg_price, avg_price_per_sqft, commute, walkscore_df
+
+df = pd.read_csv("data/processed/apartments.csv")
+
+avg_price = df.groupby("city")["price"].mean().round(2)
+
+df_with_sqft = df.dropna(subset=["square_footage"]).copy()
+df_with_sqft["price_per_sqft"] = df_with_sqft["price"] / df_with_sqft["square_footage"]
+avg_price_per_sqft = df_with_sqft.groupby("city")["price_per_sqft"].mean().round(2)
+
+commute = df.groupby("city")[["usc_commute", "work_commute"]].mean()
+
+walkscore_df = df.groupby("city")[["walk_score", "bike_score"]].mean()
 
 fig = plt.figure(figsize=(14, 10))
 fig.suptitle('Apartment overview by city', fontsize=16)
