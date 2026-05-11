@@ -1,5 +1,7 @@
 import requests
 import json
+import os
+os.makedirs("data/processed", exist_ok=True)
 
 API_KEY_Walkscore = 'be15a1f38e712e2712ce9d3b0092f68f'
 API_KEY = 'eyJvcmciOiI1YjNjZTM1OTc4NTExMTAwMDFjZjYyNDgiLCJpZCI6IjNjOGRmYzA0MTIxZTQ2OThiNDkwOWVmYjhhZDczMmQzIiwiaCI6Im11cm11cjY0In0='
